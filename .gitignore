@@ -1,0 +1,11 @@
+DerivedData/
+build/
+*.xcuserdatad/
+*.xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+/.build/
+/Packages/
+Package.pins
+Package.resolved
