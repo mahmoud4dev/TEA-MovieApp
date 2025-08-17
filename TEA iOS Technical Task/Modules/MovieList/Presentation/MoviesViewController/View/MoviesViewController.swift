@@ -124,7 +124,12 @@ extension MoviesViewController: UITableViewDataSource {
         cell.favoriteCompletionHandler = { [weak self] in
             guard let self = self else { return }
             var item = self.viewModel.remoteData[indexPath.row]
-            item.isFavorite?.toggle()
+            if item.isFavorite == nil {
+                item.isFavorite = false
+                item.isFavorite?.toggle()
+            } else  {
+                item.isFavorite?.toggle()
+            }
             self.viewModel.remoteData[indexPath.row] = item
             cell.setData(item)
             self.viewModel.updateIsFavorite(id: item.id ?? 0, value: item.isFavorite == true)

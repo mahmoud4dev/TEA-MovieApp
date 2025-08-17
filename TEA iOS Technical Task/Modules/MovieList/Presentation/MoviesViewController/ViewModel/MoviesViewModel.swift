@@ -57,7 +57,8 @@ extension MoviesViewModel {
         loading = true
         Task {
             do {
-                let success = try await moviesUseCase.updateIsFavorite(id: id, value: value)
+                let _ = try await moviesUseCase.updateIsFavorite(id: id, value: value)
+                
             } catch {
                 self.error = error
             }
